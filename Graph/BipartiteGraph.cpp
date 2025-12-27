@@ -20,8 +20,8 @@ class Solution {
        queue<int>q;
        for(int i = 0; i< color.size();i++){
            if(color[i] == -1){
-               color[0] =0;
-               q.push(0);
+               color[i] =0;
+               q.push(i);
                while(!q.empty()){
                    int node = q.front();
                    q.pop();
@@ -95,4 +95,5 @@ class Solution {
        }
 
        
+
 };
