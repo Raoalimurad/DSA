@@ -20,10 +20,13 @@ class Solution {
         vector<int>dist(V,INT_MAX);
         dist[src] = 0;
         
-        ///select a node which is not explore yet and distance value is minium
+        ///select a vertice  which is not explore yet and  its distance value is minium among all the unexplored vertices
+      
        int count = V;
+      //0(V) SO OVERALL OUTER PER V+INNER ME (V+(V-1)) SO ISY V BOL LO V*V = V2
        while(count --){
         int node = -1 , value = INT_MAX;
+         //0(v)
         for(int i = 0; i<V;i++){
             if(!explore[i] && dist[i] < value ){
                 node = i;
@@ -32,7 +35,7 @@ class Solution {
         }
         if(node == -1) break;
         explore[node] = 1;
-        ////relax the edges
+        ////relax the edges  v-1 time assume beacuse agar complete graph bi hoto v-1 vertices hogye uski neighbours
         for(int i = 0; i<adj[node].size();i++){
             int neighbour = adj[node][i].first;
             int weight = adj[node][i].second;
@@ -107,4 +110,5 @@ class Solution {
    return dist;
     
     }
+
 };
